@@ -3,7 +3,6 @@ const {relative} = require('path')
 const {readFileSync, writeFileSync} = require('fs')
 module.exports = plugin('postcss-timings', function (opts) {
   opts.file = opts.file || 'timings'
-  console.log(opts.file)
   const start = Date.now()
   return (root, result) => {
     const path = relative(process.cwd(), result.opts.from)
